@@ -47,7 +47,7 @@ button.onclick = async () => {
     path_value += "/";
     path.value = path_value;
   }
-  if (!path_value.beginsWith("/")) {
+  if (!path_value.startsWith("/")) {
     path_value = "/" + path_value;
     path.value = path_value;
   }
