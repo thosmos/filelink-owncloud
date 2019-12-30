@@ -60,7 +60,8 @@ browser.cloudFile.onFileUpload.addListener(async (account, { id, name, data }) =
   
   headers = {
     "Content-Type": "application/x-www-form-urlencoded; charset=utf-8",
-    Authorization: authHeader
+    Authorization: authHeader,
+    "OCS-APIRequest": true
   };
 
   fetchInfo = {
