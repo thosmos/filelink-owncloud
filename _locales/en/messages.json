@@ -30,6 +30,6 @@
     "message": "Storage Path"
   },
   "pathDesc": {
-    "message": "The path where the files are stored in OwnCloud (must begin and end with a '/')"
+    "message": "The path where the files are stored in OwnCloud (must already exist and begin and end with a '/')"
   }
 }
