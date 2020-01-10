@@ -31,7 +31,7 @@ browser.cloudFile.onFileUpload.addListener(async (account, { id, name, data }) =
 
   const authHeader = "Basic " + btoa(username + ":" + token);
 
-  let url = serverUrl + "remote.php/dav/files/" + username + path + encodeURIComponent(name);
+  let url = serverUrl + "remote.php/webdav" + path + encodeURIComponent(name);
 
   let headers = {
     "Content-Type": "application/octet-stream",
@@ -108,7 +108,7 @@ browser.cloudFile.onFileDeleted.addListener(async (account, id) => {
 
   const authHeader = "Basic " + btoa(username + ":" + token);
 
-  let url = serverUrl + "remote.php/dav/files/" + username + path + encodeURIComponent(name);
+  let url = serverUrl + "remote.php/webdav" + path + encodeURIComponent(name);
 
   let headers = {
     Authorization: authHeader
@@ -128,7 +128,7 @@ browser.cloudFile.onFileDeleted.addListener(async (account, id) => {
   uploads.delete(id);
   
   if (response.status > 299) {
-    throw new Error("response was not ok");
+    throw new Error("response was not ok: server status code: " + response.status + ", response message: " + response.statusText);
   }
 
 });
