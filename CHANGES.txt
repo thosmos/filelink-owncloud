@@ -1,0 +1,2 @@
+1.1: added a bit more detail to the error message on failed upload
+1.0: initial commit

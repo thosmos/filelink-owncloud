@@ -52,7 +52,7 @@ browser.cloudFile.onFileUpload.addListener(async (account, { id, name, data }) =
 
   delete uploadInfo.abortController;
   if (response.status > 299) {
-    throw new Error("response was not ok");
+    throw new Error("response was not ok: server status code: " + response.status + ", response message: " + response.statusText);
   }
 
   const newUrl = serverUrl + "ocs/v1.php/apps/files_sharing/api/v1/shares?format=json";
