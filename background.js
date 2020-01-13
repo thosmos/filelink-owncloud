@@ -12,7 +12,12 @@ async function getAccountInfo(accountId) {
   return accountInfo[accountId];
 }
 
-browser.cloudFile.onFileUpload.addListener(async (account, { id, name, data }) => {
+browser.cloudFile.onFileUpload.addListener(async (account, params) => {
+
+  let { id, name, data } = params;
+
+  name = "" + Date.now() + "_" + name;
+
   console.log("onFileUpload", id, account, name);
 
   let accountInfo = await getAccountInfo(account.id);
