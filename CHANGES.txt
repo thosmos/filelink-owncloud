@@ -1,3 +1,4 @@
+1.7: Change branding to reference both OwnCloud and NextCloud
 1.6: Save file with a timestamp to avoid overwriting files
 1.5: Delete public share link instead of actual file; 
 1.4: Change server URL to personal WebDav URL; Confirm deletion of server file;
