@@ -1,5 +1,5 @@
 # filelink-owncloud
-A Thunderbird add-on that enables uploading attachments to an OwnCloud account
+A Thunderbird add-on that enables uploading attachments to an OwnCloud or NextCLoud (testing) account
 
 ## Installation
 
