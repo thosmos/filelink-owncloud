@@ -31,7 +31,7 @@ browser.cloudFile.onFileUpload.addListener(async (account, { id, name, data }) =
 
   const authHeader = "Basic " + btoa(username + ":" + token);
 
-  let url = serverUrl + "remote.php/webdav" + path + encodeURIComponent(name);
+  let url = serverUrl + path + encodeURIComponent(name);
 
   let headers = {
     "Content-Type": "application/octet-stream",
@@ -79,7 +79,7 @@ browser.cloudFile.onFileUpload.addListener(async (account, { id, name, data }) =
   if(response.ok)
   {
     let respJson = await response.json();
-    return {url: respJson.ocs.data.url};
+    return {url: respJson.ocs.data.url + "/download"};
   }
   else
     return {aborted: true}
@@ -101,6 +101,11 @@ browser.cloudFile.onFileDeleted.addListener(async (account, id) => {
     return;
   }
 
+  let response = confirm("Do you wish to delete the file on the server?");
+  if(!response){
+    return;
+  }
+
   let accountInfo = await getAccountInfo(account.id);
 
   let {name} = uploadInfo;
@@ -108,7 +113,7 @@ browser.cloudFile.onFileDeleted.addListener(async (account, id) => {
 
   const authHeader = "Basic " + btoa(username + ":" + token);
 
-  let url = serverUrl + "remote.php/webdav" + path + encodeURIComponent(name);
+  let url = serverUrl + path + encodeURIComponent(name);
 
   let headers = {
     Authorization: authHeader

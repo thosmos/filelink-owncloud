@@ -9,10 +9,10 @@
     "message": "OwnCloud"
   },
   "serverURLLabel": {
-    "message": "Server URL"
+    "message": "WebDav URL"
   },
   "serverURLDesc": {
-    "message": "The base URL of the OwnCloud server"
+    "message": "Your Personal WebDav file path can be found under Settings in the lower left of the Files screen."
   },
   "usernameLabel": {
     "message": "Username"
@@ -30,6 +30,6 @@
     "message": "Storage Path"
   },
   "pathDesc": {
-    "message": "The path where the files are stored in OwnCloud (must already exist and begin and end with a '/')"
+    "message": "The path where the files are stored in OwnCloud (it must already exist and begin and end with a '/')"
   }
 }
